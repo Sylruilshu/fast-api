@@ -1,8 +1,10 @@
 # fast-api
 
+A project to learn about interacting with databases and building APIs
+
 [![pre-commit hooks](https://github.com/Sylruilshu/fast-api/actions/workflows/ci.yaml/badge.svg)](https://github.com/Sylruilshu/fast-api/actions/workflows/ci.yaml)
 
-## source
+## Source
 - FastAPI Tutorial: https://www.youtube.com/watch?v=GN6ICac3OXY
 
 ## Project setup
