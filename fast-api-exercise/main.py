@@ -12,29 +12,33 @@ db: List[User] = [
         first_name="Jemma",
         last_name="Smith",
         gender=Gender.female,
-        roles=[Role.student]
-    ),    
+        roles=[Role.student],
+    ),
     User(
         id=UUID("76d7fc2b-cfa2-4b6f-a3a6-f3cff241ecdb"),
         first_name="Alex",
         last_name="Jones",
         gender=Gender.male,
-        roles=[Role.admin, Role.user]
-    )
+        roles=[Role.admin, Role.user],
+    ),
 ]
+
 
 @app.get("/")
 async def route():
     return {"Hello": "Mundo"}
 
+
 @app.get("/api/v1/users")
 async def fetch_user():
     return db
+
 
 @app.post("/api/v1/users")
 async def register_user(user: User):
     db.append(user)
     return {"id": user.id}
+
 
 @app.delete("/api/v1/users/{user_id}")
 async def delete_user(user_id: UUID):
@@ -42,11 +46,11 @@ async def delete_user(user_id: UUID):
         if user_id == user.id:
             db.remove(user)
             return
-        
+
     raise HTTPException(
-        status_code=404,
-        detail=f"User with id: {user_id} does not exist"
+        status_code=404, detail=f"User with id: {user_id} does not exist"
     )
+
 
 @app.put("/api/v1/users/{user_id}")
 async def update_user(user_update: UserUpdate, user_id: UUID):
@@ -63,9 +67,9 @@ async def update_user(user_update: UserUpdate, user_id: UUID):
             return f"User: {user.id} info updated"
 
     raise HTTPException(
-        status_code=404,
-        detail="User with id: {user_id} does not exist"
+        status_code=404, detail="User with id: {user_id} does not exist"
     )
+
 
 # {
 #   "id": "ea474970-3f8c-45f2-b625-45dd289dd2e3",
