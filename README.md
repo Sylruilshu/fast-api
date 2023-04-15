@@ -1,5 +1,7 @@
 # fast-api
 
+[![pre-commit hooks](https://github.com/Sylruilshu/fast-api/actions/workflows/ci.yaml/badge.svg)](https://github.com/Sylruilshu/fast-api/actions/workflows/ci.yaml)
+
 ## source
 - FastAPI Tutorial: https://www.youtube.com/watch?v=GN6ICac3OXY
 
